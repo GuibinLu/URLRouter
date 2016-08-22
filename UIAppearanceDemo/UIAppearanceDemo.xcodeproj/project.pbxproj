@@ -29,6 +29,7 @@
 		7364A2AF1D670799000BF773 /* BaseModulAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7364A2AE1D670799000BF773 /* BaseModulAPI.m */; };
 		7364A2B91D6715E9000BF773 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7364A2B81D6715E9000BF773 /* BaseViewController.m */; };
 		7364A2BC1D675157000BF773 /* CurrentVCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7364A2BB1D675157000BF773 /* CurrentVCManager.m */; };
+		7364A2BF1D6AEC1C000BF773 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364A2BE1D6AEC1C000BF773 /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		7364A2B81D6715E9000BF773 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		7364A2BA1D675157000BF773 /* CurrentVCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentVCManager.h; sourceTree = "<group>"; };
 		7364A2BB1D675157000BF773 /* CurrentVCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentVCManager.m; sourceTree = "<group>"; };
+		7364A2BE1D6AEC1C000BF773 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7364A2BF1D6AEC1C000BF773 /* JavaScriptCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,10 +150,8 @@
 				7364A2751D6703E3000BF773 /* Lib */,
 				7364A2741D67034B000BF773 /* Helper */,
 				7364A2921D67063B000BF773 /* Module */,
-				734A627C1D62F8660018944B /* Assets.xcassets */,
-				734A627E1D62F8660018944B /* LaunchScreen.storyboard */,
-				734A62811D62F8660018944B /* Info.plist */,
 				734A62701D62F8660018944B /* Supporting Files */,
+				7364A2BD1D6AEBD6000BF773 /* Frameworks */,
 			);
 			path = UIAppearanceDemo;
 			sourceTree = "<group>";
@@ -161,6 +162,9 @@
 				734A62731D62F8660018944B /* AppDelegate.h */,
 				734A62741D62F8660018944B /* AppDelegate.m */,
 				734A62791D62F8660018944B /* Main.storyboard */,
+				734A627E1D62F8660018944B /* LaunchScreen.storyboard */,
+				734A627C1D62F8660018944B /* Assets.xcassets */,
+				734A62811D62F8660018944B /* Info.plist */,
 				734A62711D62F8660018944B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -312,6 +316,14 @@
 				7364A2B81D6715E9000BF773 /* BaseViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		7364A2BD1D6AEBD6000BF773 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7364A2BE1D6AEC1C000BF773 /* JavaScriptCore.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = UIAppearanceDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -613,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = UIAppearanceDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
