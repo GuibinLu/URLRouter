@@ -153,7 +153,8 @@ return EasyJS.call(obj, method, Array.prototype.slice.call(arguments));\
 		
 		//return the value by using javascript
 		if ([sig methodReturnLength] > 0){
-			NSString* retValue;
+            
+			NSString* __unsafe_unretained retValue;
 			[invoker getReturnValue:&retValue];
 			
 			if (retValue == NULL || retValue == nil){
