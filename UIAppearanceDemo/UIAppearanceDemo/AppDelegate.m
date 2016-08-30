@@ -44,7 +44,8 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    [self detectionShare];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -66,6 +67,18 @@
 {
     [NSString registerViewControllers];
     [NSString registerActions];
+}
+/**
+ *  检测是否有类似于淘宝的复制分享
+ */
+- (void)detectionShare
+{
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    if ([pasteboard.string rangeOfString:@"cyyuer://"].length > 0 && [pasteboard.string rangeOfString:@"SEND"].length >0) {
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:@"高级小轿车！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定查看", nil];
+        [alert show];
+    }
 }
 
 @end

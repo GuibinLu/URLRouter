@@ -16,7 +16,8 @@
 
 - (instancetype)initWithURL:(NSURL *)URL
                      target:(id)target
-                   selector:(SEL)selector;
+                   selector:(SEL)selector
+          isMergeQueryInDic:(BOOL)isMergeQueryInDic;
 
 
 - (id)performWithURL:(NSURL *)URL;

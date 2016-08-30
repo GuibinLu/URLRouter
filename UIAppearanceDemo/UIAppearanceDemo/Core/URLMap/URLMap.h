@@ -20,6 +20,11 @@
                        target:(id)target
                      selector:(SEL)selector;
 
+- (void)registerWithURLString:(NSString *)URLString
+                       target:(id)target
+                     selector:(SEL)selector
+            isMergeQueryInDic:(BOOL)isMergeQueryInDic;
+
 - (id)performWithURLString:(NSString *)URLString;
 
 @end

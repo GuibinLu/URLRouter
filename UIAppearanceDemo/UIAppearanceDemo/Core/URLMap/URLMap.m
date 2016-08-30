@@ -40,16 +40,22 @@
                        target:(id)target
                      selector:(SEL)selector
 {
+
+    [self registerWithURLString:URLString target:target selector:selector isMergeQueryInDic:NO];
+}
+
+- (void)registerWithURLString:(NSString *)URLString target:(id)target selector:(SEL)selector isMergeQueryInDic:(BOOL)isMergeQueryInDic
+{
     NSAssert(URLString.length, @"URLString 必须存在");
     
     if (URLString.length == 0) {
         return ;
     }
+    
     NSURL *URL = [NSURL URLWithString:[URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
-    URLPattern *pattern = [[URLPattern alloc]initWithURL:URL target:target selector:selector];
+    URLPattern *pattern = [[URLPattern alloc]initWithURL:URL target:target selector:selector isMergeQueryInDic:isMergeQueryInDic];
     [self.patternDic setObject:pattern forKey:pattern.identityString];
-    
 }
 
 - (id)performWithURLString:(NSString *)URLString
@@ -57,7 +63,7 @@
     NSAssert(URLString.length, @"URLString 必须存在");
     if (URLString.length == 0) return nil;
     
-    /** 
+    /**
      * stringByAddingPercentEncodingWithAllowedCharacters: ios9 推荐使用
      * 对应的有 stringByRemovingPercentEncoding
      *

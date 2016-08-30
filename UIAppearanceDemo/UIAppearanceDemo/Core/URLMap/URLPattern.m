@@ -14,6 +14,8 @@
 
 @property (nonatomic,strong) NSURL          *URL;
 
+@property (nonatomic,assign) BOOL           isMergeQueryInDic;
+
 //shareURLMap单例维护着每一个URLPattern实例，为避免内存泄漏应将其设为weak, target只是调用invocation时候使用，并没有暴露给外部使用
 
 @property (nonatomic,weak) Class            targetClass;
@@ -65,10 +67,13 @@ URLPatternArgumentType URLPatternArgumentTypeForTypeChar(char argType);
 - (instancetype)initWithURL:(NSURL *)URL
                      target:(id)target
                    selector:(SEL)selector
+          isMergeQueryInDic:(BOOL)isMergeQueryInDic
 {
     self = [super init];
     if (self) {
         self.URL = URL;
+        self.isMergeQueryInDic = isMergeQueryInDic;
+        
         if ([target class] == target) {
             self.targetClass = target;
         }else{
@@ -147,26 +152,30 @@ URLPatternArgumentType URLPatternArgumentTypeForTypeChar(char argType);
     [invocation setSelector:self.selector];
     
     __weak typeof(self) _self = self;
-    [self.queryKeys enumerateObjectsUsingBlock:^(NSString *  _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
-        __strong typeof(self) self = _self;
-        
-        //得到idx 对应位置的参数类型 前两个是 receiver 和 cmd
-        NSInteger index = idx + 2;
-        const char *typeChar =  [methodSignature getArgumentTypeAtIndex:index];
-        URLPatternArgumentType type = URLPatternArgumentTypeForTypeChar(typeChar[0]);
-        //parameterObject可能是对象或者字典 通过kvc 得到object 对应的 value
-        id value = [parameterObject valueForKey:key];
-        
-        if (value == [NSNull null]) {
-            value = nil;
-        }
-        if (value == nil && type != URLPatternArgumentType_Pointer) {
-            value = @"0";
-        }
-        
-        [self setArgument:value withType:type atIndex:index forInvocation:invocation];
-        
-    }];
+    if (self.isMergeQueryInDic) {
+        [self setArgument:parameterObject withType:URLPatternArgumentType_Pointer atIndex:2 forInvocation:invocation];
+    }else{
+        [self.queryKeys enumerateObjectsUsingBlock:^(NSString *  _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
+            __strong typeof(self) self = _self;
+            
+            //得到idx 对应位置的参数类型 前两个是 receiver 和 cmd
+            NSInteger index = idx + 2;
+            const char *typeChar =  [methodSignature getArgumentTypeAtIndex:index];
+            URLPatternArgumentType type = URLPatternArgumentTypeForTypeChar(typeChar[0]);
+            //parameterObject可能是对象或者字典 通过kvc 得到object 对应的 value
+            id value = [parameterObject valueForKey:key];
+            
+            if (value == [NSNull null]) {
+                value = nil;
+            }
+            if (value == nil && type != URLPatternArgumentType_Pointer) {
+                value = @"0";
+            }
+            
+            [self setArgument:value withType:type atIndex:index forInvocation:invocation];
+            
+        }];
+    }
     
     [invocation invoke];
     

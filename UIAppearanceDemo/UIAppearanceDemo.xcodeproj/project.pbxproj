@@ -30,6 +30,10 @@
 		7364A2B91D6715E9000BF773 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7364A2B81D6715E9000BF773 /* BaseViewController.m */; };
 		7364A2BC1D675157000BF773 /* CurrentVCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7364A2BB1D675157000BF773 /* CurrentVCManager.m */; };
 		7364A2BF1D6AEC1C000BF773 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7364A2BE1D6AEC1C000BF773 /* JavaScriptCore.framework */; };
+		7376403D1D6BE207000C3E47 /* easyjs-inject.js in Resources */ = {isa = PBXBuildFile; fileRef = 737640361D6BE207000C3E47 /* easyjs-inject.js */; };
+		7376403E1D6BE207000C3E47 /* EasyJSDataFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 737640381D6BE207000C3E47 /* EasyJSDataFunction.m */; };
+		7376403F1D6BE207000C3E47 /* EasyJSWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7376403A1D6BE207000C3E47 /* EasyJSWebView.m */; };
+		737640401D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7376403C1D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,13 @@
 		7364A2BA1D675157000BF773 /* CurrentVCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentVCManager.h; sourceTree = "<group>"; };
 		7364A2BB1D675157000BF773 /* CurrentVCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentVCManager.m; sourceTree = "<group>"; };
 		7364A2BE1D6AEC1C000BF773 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		737640361D6BE207000C3E47 /* easyjs-inject.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "easyjs-inject.js"; sourceTree = "<group>"; };
+		737640371D6BE207000C3E47 /* EasyJSDataFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyJSDataFunction.h; sourceTree = "<group>"; };
+		737640381D6BE207000C3E47 /* EasyJSDataFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyJSDataFunction.m; sourceTree = "<group>"; };
+		737640391D6BE207000C3E47 /* EasyJSWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyJSWebView.h; sourceTree = "<group>"; };
+		7376403A1D6BE207000C3E47 /* EasyJSWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyJSWebView.m; sourceTree = "<group>"; };
+		7376403B1D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyJSWebViewProxyDelegate.h; sourceTree = "<group>"; };
+		7376403C1D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyJSWebViewProxyDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +224,7 @@
 		7364A2761D6703EC000BF773 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				737640351D6BE15E000C3E47 /* JS */,
 				7364A2B61D6715BC000BF773 /* Base */,
 				7364A2771D6703EC000BF773 /* URLMap */,
 			);
@@ -326,6 +338,20 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		737640351D6BE15E000C3E47 /* JS */ = {
+			isa = PBXGroup;
+			children = (
+				737640361D6BE207000C3E47 /* easyjs-inject.js */,
+				737640371D6BE207000C3E47 /* EasyJSDataFunction.h */,
+				737640381D6BE207000C3E47 /* EasyJSDataFunction.m */,
+				737640391D6BE207000C3E47 /* EasyJSWebView.h */,
+				7376403A1D6BE207000C3E47 /* EasyJSWebView.m */,
+				7376403B1D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.h */,
+				7376403C1D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.m */,
+			);
+			path = JS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7376403D1D6BE207000C3E47 /* easyjs-inject.js in Resources */,
 				734A62801D62F8660018944B /* LaunchScreen.storyboard in Resources */,
 				734A627D1D62F8660018944B /* Assets.xcassets in Resources */,
 				734A627B1D62F8660018944B /* Main.storyboard in Resources */,
@@ -456,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737640401D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.m in Sources */,
 				7364A2911D6705F1000BF773 /* NSString+Add.m in Sources */,
 				7364A28F1D6705F1000BF773 /* AppJumpFunction.m in Sources */,
 				7364A2881D6705E6000BF773 /* URLPattern.m in Sources */,
@@ -468,8 +496,10 @@
 				7364A2851D6705E6000BF773 /* NSString+URLMap.m in Sources */,
 				7364A2B91D6715E9000BF773 /* BaseViewController.m in Sources */,
 				7364A2841D6705E6000BF773 /* NSString+ActionURLMap.m in Sources */,
+				7376403F1D6BE207000C3E47 /* EasyJSWebView.m in Sources */,
 				734A62781D62F8660018944B /* ViewController.m in Sources */,
 				7364A2871D6705E6000BF773 /* URLMap.m in Sources */,
+				7376403E1D6BE207000C3E47 /* EasyJSDataFunction.m in Sources */,
 				734A62751D62F8660018944B /* AppDelegate.m in Sources */,
 				734A62721D62F8660018944B /* main.m in Sources */,
 				7364A2861D6705E6000BF773 /* NSString+ViewControllerURLMap.m in Sources */,
