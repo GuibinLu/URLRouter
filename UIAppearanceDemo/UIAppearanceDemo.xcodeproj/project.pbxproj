@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		734A62721D62F8660018944B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A62711D62F8660018944B /* main.m */; };
 		734A62751D62F8660018944B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A62741D62F8660018944B /* AppDelegate.m */; };
-		734A62781D62F8660018944B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 734A62771D62F8660018944B /* ViewController.m */; };
 		734A627B1D62F8660018944B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 734A62791D62F8660018944B /* Main.storyboard */; };
 		734A627D1D62F8660018944B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 734A627C1D62F8660018944B /* Assets.xcassets */; };
 		734A62801D62F8660018944B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 734A627E1D62F8660018944B /* LaunchScreen.storyboard */; };
@@ -34,6 +33,7 @@
 		7376403E1D6BE207000C3E47 /* EasyJSDataFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 737640381D6BE207000C3E47 /* EasyJSDataFunction.m */; };
 		7376403F1D6BE207000C3E47 /* EasyJSWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7376403A1D6BE207000C3E47 /* EasyJSWebView.m */; };
 		737640401D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7376403C1D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.m */; };
+		73B690BB1DE41EF0007B1EF6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B690BA1DE41EF0007B1EF6 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,6 @@
 		734A62711D62F8660018944B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		734A62731D62F8660018944B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		734A62741D62F8660018944B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		734A62761D62F8660018944B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../../ViewController.h; sourceTree = "<group>"; };
-		734A62771D62F8660018944B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../../ViewController.m; sourceTree = "<group>"; };
 		734A627A1D62F8660018944B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		734A627C1D62F8660018944B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		734A627F1D62F8660018944B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,6 +104,8 @@
 		7376403A1D6BE207000C3E47 /* EasyJSWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyJSWebView.m; sourceTree = "<group>"; };
 		7376403B1D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyJSWebViewProxyDelegate.h; sourceTree = "<group>"; };
 		7376403C1D6BE207000C3E47 /* EasyJSWebViewProxyDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyJSWebViewProxyDelegate.m; sourceTree = "<group>"; };
+		73B690B91DE41EF0007B1EF6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		73B690BA1DE41EF0007B1EF6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,8 +306,8 @@
 		7364A2A81D67068F000BF773 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				734A62761D62F8660018944B /* ViewController.h */,
-				734A62771D62F8660018944B /* ViewController.m */,
+				73B690B91DE41EF0007B1EF6 /* ViewController.h */,
+				73B690BA1DE41EF0007B1EF6 /* ViewController.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -497,7 +497,7 @@
 				7364A2B91D6715E9000BF773 /* BaseViewController.m in Sources */,
 				7364A2841D6705E6000BF773 /* NSString+ActionURLMap.m in Sources */,
 				7376403F1D6BE207000C3E47 /* EasyJSWebView.m in Sources */,
-				734A62781D62F8660018944B /* ViewController.m in Sources */,
+				73B690BB1DE41EF0007B1EF6 /* ViewController.m in Sources */,
 				7364A2871D6705E6000BF773 /* URLMap.m in Sources */,
 				7376403E1D6BE207000C3E47 /* EasyJSDataFunction.m in Sources */,
 				734A62751D62F8660018944B /* AppDelegate.m in Sources */,
